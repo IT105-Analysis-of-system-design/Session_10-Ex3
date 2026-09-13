@@ -1,0 +1,124 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Sequence - Dat xe RikkeiLogistics" id="seq-datxe">
+    <mxGraphModel dx="1400" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== Headers (Trip chua xuat hien - se tao rieng ben trong khoi alt) ===== -->
+        <mxCell id="actor_head" value="Kh\u00e1ch h\u00e0ng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="130" y="40" width="40" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="app_head" value="App \u0110i\u1ec1u Ph\u1ed1i" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="60" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="driver_head" value="\u0110i\u1ec7n tho\u1ea1i T\u00e0i x\u1ebf" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="780" y="60" width="150" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Lifelines cho 3 doi tuong co san tu dau ===== -->
+        <mxCell id="actor_line" style="endArrow=none;startArrow=none;dashed=1;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="110" as="sourcePoint" />
+            <mxPoint x="150" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="app_line" style="endArrow=none;startArrow=none;dashed=1;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="100" as="sourcePoint" />
+            <mxPoint x="510" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="driver_line" style="endArrow=none;startArrow=none;dashed=1;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="100" as="sourcePoint" />
+            <mxPoint x="855" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Activation bars ===== -->
+        <mxCell id="app_act" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="505" y="150" width="10" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="driver_act" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="850" y="210" width="10" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Buoc 1: Sync - Khach hang -> App Dieu Phoi ===== -->
+        <mxCell id="msg1" value="taoDonHang()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;endSize=10;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="150" as="sourcePoint" />
+            <mxPoint x="505" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Buoc 2: Async - App Dieu Phoi -> Dien thoai Tai xe ===== -->
+        <mxCell id="msg2" value="g\u1eedi y\u00eau c\u1ea7u nh\u1eadn \u0111\u01a1n" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=0;endSize=10;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="515" y="210" as="sourcePoint" />
+            <mxPoint x="850" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Buoc 3: Async - Dien thoai Tai xe -> App Dieu Phoi ===== -->
+        <mxCell id="msg3" value="ph\u1ea3n h\u1ed3i \u0110\u1ed3ng \u00fd / T\u1eeb ch\u1ed1i" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=0;endSize=10;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="270" as="sourcePoint" />
+            <mxPoint x="515" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Khoi Combined Fragment: alt ===== -->
+        <mxCell id="alt_frame" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=12;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="460" y="300" width="750" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="guard1" value="[T\u00e0i x\u1ebf \u0111\u1ed3ng \u00fd]" style="text;html=1;align=left;verticalAlign=top;fontStyle=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="475" y="325" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="alt_divider" style="endArrow=none;startArrow=none;dashed=1;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="405" as="sourcePoint" />
+            <mxPoint x="1210" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="else_label" value="else" style="text;html=1;align=left;verticalAlign=top;fontStyle=2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="475" y="407" width="60" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="guard2" value="[T\u00e0i x\u1ebf t\u1eeb ch\u1ed1i]" style="text;html=1;align=left;verticalAlign=top;fontStyle=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="475" y="425" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="guard2_note" value="(kh\u00f4ng th\u1ef1c hi\u1ec7n b\u01b0\u1edbc n\u00e0o \u2014 kh\u00f4ng t\u1ea1o Chuy\u1ebfn \u0110i)" style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="475" y="445" width="320" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ===== Header cua Trip: chi xuat hien ben trong nhanh Dong y, tai vi tri Create ===== -->
+        <mxCell id="trip_head" value="Chuy\u1ebfn \u0110i (Trip)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="335" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="trip_line" style="endArrow=none;startArrow=none;dashed=1;html=1;strokeColor=#000000;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1150" y="365" as="sourcePoint" />
+            <mxPoint x="1150" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Buoc 4: Create - App Dieu Phoi -> Trip (chi trong nhanh Dong y) ===== -->
+        <mxCell id="msg4_create" value="\u00abcreate\u00bb Chuy\u1ebfn \u0110i m\u1edbi" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=0;endSize=10;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="515" y="350" as="sourcePoint" />
+            <mxPoint x="1080" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ===== Buoc 5: Return - App Dieu Phoi -> Khach hang (NGOAI khoi alt) ===== -->
+        <mxCell id="msg5_return" value="k\u1ebft qu\u1ea3 cu\u1ed1i c\u00f9ng (\u0110\u00e3 t\u00ecm th\u1ea5y xe / Kh\u00f4ng t\u00ecm \u0111\u01b0\u1ee3c t\u00e0i x\u1ebf)" style="html=1;verticalAlign=bottom;endArrow=open;endFill=0;dashed=1;endSize=10;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="505" y="520" as="sourcePoint" />
+            <mxPoint x="160" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
